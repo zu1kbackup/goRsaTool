@@ -61,7 +61,7 @@ goal of support as wide a range of factorization methods and RSA attacks as poss
 * Get dependencies, you will need:
   * Golang
   * Git
-  * FLINT2 (Fast Library for Number Theory)
+  * FLINT (Fast Library for Number Theory)
   * GMP-ECM (GMP Elliptic Curve Method factorization)
 
 ### Installation on Linux / Windows 10
@@ -76,16 +76,14 @@ as well as Kali Linux 2024.1.
   sudo make install
   ```
 
-* **Note**: a breaking change was published in Kali Linux in a package called `libflint-2.8.5` which was later fixed in `libflint17` 
-  which is based on FLINT 2.9.0. If you get `goflint` package build errors, upgrade to `libflint17` or build FLINT2 2.9.0+
-  from source. On my system `sudo apt update && sudo apt install libflint-dev` was enough to correct the build errors.
-
 For Arch Linux including Athena OS:
 
   ```shell
-  sudo pacman -S git go flint gmp-ecm make
+  sudo pacman -Syu
+  sudo pacman -S git go flint gmp-ecm make base-devel
   git clone https://github.com/sourcekris/goRsaTool
   cd goRsaTool
+  go get
   sudo make install
   ```
 
